@@ -1,0 +1,589 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#sidebar {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background-color: #ffffff!important;
+  /* background: #f5f5f6; */
+  left: -200px;
+  transition: all 0.6s ease;
+  border: .1px solid #ddd;
+}
+
+.fa-bars{
+  font-size: larger;
+}
+
+#sidebar.active {
+  left: 3px;
+  /* width: 21.7%; */
+  border: .1px solid #ddd;
+}
+
+#sidebar ul li {
+  color: rgba(112, 112, 112, 0.9);
+  list-style: none;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(100, 100, 100, .3);
+  text-align: center;
+}
+
+.logo {
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto; 
+}
+
+#sidebar .toggle-btn {
+  position: absolute;
+  left: 225px;
+  top: 20px;
+  cursor: pointer;
+}
+
+#sidebar .toggle-btn span {
+  display: block;
+  width: 40px;
+  text-align: center;
+  font-size: 30px;
+  border: 3px solid #000;
+}
+
+
+.home-content{
+  position: absolute;
+  height: 100%;
+  width: calc(101% - 70px);
+  left: 50px;
+  transition: all 0.5s ease;
+}
+
+.home-content .text{
+  font-size: 25px;
+  font-weight: 500;
+  color: #1d1b31;
+  margin: 12px;
+}
+
+#sidebar.active ~ .home-content{
+  width: calc(100% - 240px);
+  left: 260px;
+}
+
+#sidebar.active .toggle-btn {
+  position: absolute;
+  left: 225px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.logo-classroom{
+  margin-left: 0%;
+  margin-top: 0.5%;
+  transition: all 0.4s ease;
+}
+
+#sidebar.active .logo-classroom{
+  margin-left: 6%;
+  transition: all 0.4s ease;
+}
+
+.iconos-nav{
+    color: #797c7c;
+    position: inherit;
+    width: 10%;
+    font-size: larger;
+}
+
+.ico-plus{
+  font-size: larger;
+  position: absolute;
+  margin-left: 80%;
+}
+.ico-th{
+  font-size: larger;
+  position: absolute;
+  margin-left: 86%;
+}
+.ico-users{
+  font-size: larger;
+  position: absolute;
+  margin-left: 90%;
+}
+
+.todalas-class {
+  background-color: #E3EEFD;
+  color: #424343;
+  border-radius: 1.5rem;
+  width: 120%;
+  padding: 1%;
+  text-align: center;
+  padding-top: 10%;
+  margin-left: -18%;
+  cursor: pointer;
+}
+
+.classes{
+  color: #1d1b31;
+  font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-class{
+  background-color: #ffffff!important;
+  border: .1px solid #efe8e8;
+}
+
+/** targetas */
+.card-class{
+  margin-top: 5%;
+  margin-left: 15px;
+  border-top-left-radius: calc(1.25rem - 1px);
+  border-top-right-radius: calc(1.25rem - 1px);
+}
+
+.nombre-class{
+  position: absolute;
+  transform: translateY(-86px);
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  font-weight: bold;
+}
+.seccion-class{
+  position: absolute;
+  transform: translateY(-65px);
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  /* font-weight: bold; */
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(1.25rem - 1px);
+  border-top-right-radius: calc(1.25rem - 1px);
+}
+
+.ico-targeta{
+  padding-left: 68%;
+  
+}
+
+.ico-color{
+  color: #403939;
+}
+
+/* .dropdown-menu[data-bs-popper] {
+  top: 100%;
+  right: -30px;
+  margin-top: 1.125rem;
+  left: -75px;
+} */
+
+.dropdown-menu[data-bs-popper] {
+  top: 130%;
+  right: -110px;
+  left: -120px;
+  transform: translateX(-110px);
+}
+
+.card-img, .card-img-bottom {
+    border-radius: 2.5rem;
+    width: 90%;
+    margin: 10%;
+}
+
+/**detalle de clases */
+.nav-link{
+  transform: translateY(-35px);
+}
+
+.card-detalle1{
+  width: 89%;
+  margin: auto;
+  padding-left: inherit;
+  padding-right: inherit;
+  border-radius: 1.2rem;
+  margin-top: 3%;
+}
+
+.nombre-detalle{
+  position: absolute;
+  transform: translateY(-190px);
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  font-weight: bold;
+}
+.seccion-detalle{
+  position: absolute;
+  transform: translateY(-170px);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  /* font-weight: bold; */
+}
+.codigo-detalle{
+  position: absolute;
+  transform: translateY(-145px);
+  color: rgb(255, 255, 255);
+  font-size: small;
+  /* font-weight: bold; */
+}
+
+.nomDetalle-nav1{
+  /* position: absolute; */
+  margin-left: -155%;
+  transform: translateY(-20px);
+}
+.nomDetalle-nav2 {
+  transform: translateY(-35px);
+  margin-left: -155%;
+}
+
+.nav-link {
+  /* border-bottom: 1px solid blue; */
+  position: absolute;
+}
+
+.link0{
+  margin-left: -20%; 
+}
+.link1{
+  margin-left: -25%;
+}
+.link2{
+  margin-left: -15%;
+}
+.link3{
+  margin-left: 1%;
+}
+
+#todalas-clases .logo-classroom{
+  opacity: 0;
+}
+
+
+/* * detalle 2 */
+
+.card-detalle2{
+  border-radius: 0.5rem;
+    margin-left: 52px;
+    width: 65%;
+}
+
+.fa-retweet{
+  margin-left: 70%;
+}
+
+/* * detalle 3 */
+
+.card-detalle3{
+  border-radius: 0.5rem;
+  right: 70px;
+    width: 107%;
+    margin-bottom: 1.5%;
+}
+
+.img-detalle{
+  width: 6%;
+  border-radius: 2rem;
+  margin: 5px 0px -50px 7px;
+}
+
+.text-detalle{
+ margin-left: 40px;
+}
+
+
+.card-detalle4{
+  border-radius: 0.5rem;
+  right: 70px;
+  width: 107%;
+}
+.fa-ellipsis-v{
+  margin-left: 88%;
+  position: absolute;
+}
+.title-det4{
+  margin-top: -2%;
+  margin-left: 2%;
+}
+
+.text-det4{
+  margin-top: -1%;
+  margin-left: 2%;
+}
+.text2-det4{
+  margin-top: -1%;
+  margin-left: -6%;
+}
+
+.card2-detalle4{
+  margin-left: 0;
+}
+
+.input-det4{
+  margin-left: 10px;
+  border-radius: 1.5rem;
+  width: 99%;
+  padding: 4.5px;
+  border: 1px solid #bfb9b9;
+}
+.input-det4:hover{
+  
+  border: 1px solid #d8f3b5;
+}
+
+.fa-paper-plane{
+  margin-left: 87%;
+  position: absolute;
+  margin-top: 1%;
+}
+
+.img-inicio{
+  padding: 10%;
+  padding-left: 20%;
+}
+
+.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 3;
+  /* border-bottom-right-radius: 0; */
+  border-radius: 1.5rem;
+}
+
+.card-img2{
+  border-radius: 1.5rem;
+  width: 60%;
+}
+
+
+
+
+/* 
+.ventana-instructor{
+  right: -40px;
+  margin-top: 1.125rem; */
+
+/* .ico-folder{
+  margin-left: 90%;
+}
+.ico-graph{
+  margin-left: 73%;
+  margin-top: -12%;
+} */
+
+
+
+
+/**@media***\
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) { 
+  /* #sidebar.active {
+    left: -18px;
+    width: 50.7%;
+    border: .1px solid #ddd;
+  } */
+
+  .iconos-nav{
+   color: #797c7c;
+    position: absolute;
+    width: 50%;
+  }
+  .logo-classroom{
+   opacity: 0;
+  }
+  .ico-plus{
+    font-size: larger;
+    position: absolute;
+    margin-left: 50%;
+  }
+  .ico-th{
+    font-size: larger;
+    position: absolute;
+    margin-left: 60%;
+  }
+  .ico-users{
+    font-size: larger;
+    position: absolute;
+    margin-left: 70%;
+  }
+  .nombre-class{
+    position: absolute;
+    transform: translateY(-86px);
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    font-weight: bold;
+  }
+  .seccion-class{
+    position: absolute;
+    transform: translateY(-65px);
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    /* font-weight: bold; */
+  }
+
+  .ico-targeta {
+    padding-left: 65%;
+  }
+
+  .dropdown-menu[data-bs-popper] {
+    top: 130%;
+    right: -110px;
+    left: -120px;
+    transform: translateX(-110px);
+  }
+  
+  .card-img{
+      border-radius: 2.5rem;
+      width: 90%;
+      margin: 10%;
+  }
+
+  .card-title{
+    text-align: center;
+  }
+  .card-subtitle {
+    text-align: center;
+
+  }
+
+  /** detalle */
+
+  .nombre-detalle{
+    position: absolute;
+    transform: translateY(-160px);
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    font-weight: bold;
+  }
+  .seccion-detalle{
+    position: absolute;
+    transform: translateY(-130px);
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    /* font-weight: bold; */
+  }
+  .codigo-detalle{
+    position: absolute;
+    transform: translateY(-125px);
+    color: rgb(255, 255, 255);
+    font-size: small;
+    /* font-weight: bold; */
+  }
+  
+}
+
+ /* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {  
+  /* #sidebar.active {
+    left: -18px;
+    width: 50.7%;
+    border: .1px solid #ddd;
+  } */
+
+  .iconos-nav{
+   color: #797c7c;
+    position: absolute;
+    width: 30%;
+    margin-left: 50%;
+
+  }
+  .logo-classroom{
+    opacity: 0;
+  } 
+  .nombre-class{
+    position: absolute;
+    transform: translateY(-86px);
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    font-weight: bold;
+  }
+  .seccion-class{
+    position: absolute;
+    transform: translateY(-65px);
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    /* font-weight: bold; */
+  }
+  .ico-targeta{
+    padding-left: 65%;
+    
+  }
+
+  .dropdown-menu[data-bs-popper] {
+    top: 130%;
+    right: -110px;
+    left: -120px;
+    transform: translateX(-110px);
+  }
+  
+  /* .card-img{
+      border-radius: 2.5rem;
+      width: 90%;
+      margin: 10%;
+  } */
+
+  .card-img {
+    border-radius: 2.5rem;
+    width: 25%;
+    margin: 5%;
+    position: absolute;
+    left: -2%;
+}
+
+/* *DEtalle */
+.nombre-detalle{
+  position: absolute;
+  transform: translateY(-90px);
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  font-weight: bold;
+}
+.seccion-detalle{
+  position: absolute;
+  transform: translateY(-70px);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  /* font-weight: bold; */
+}
+.codigo-detalle{
+  position: absolute;
+  transform: translateY(-40px);
+  color: rgb(255, 255, 255);
+  font-size: small;
+  /* font-weight: bold; */
+}
+}
+
+ /* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) { 
+  /* #sidebar.active {
+    left: -18px;
+    width: 50.7%;
+    border: .1px solid #ddd;
+  } */
+
+  .iconos-nav{
+   color: #797c7c;
+    position: absolute;
+    width: 40%;
+    margin-left: 35%;
+
+  }
+  .logo-classroom{
+    opacity: 0;
+  } 
+  /* .ico-folder {
+    margin-left: 90%;
+    padding-bottom: 0px;
+  } */
+ }
+
+ /* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
+
+ /* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {  }

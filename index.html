@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Classroom</title>
+     <!--* boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" href="/css/all.css"> -->
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+
+    <!--* Para Iconos-FontAwesome-->
+    <script src="https://kit.fontawesome.com/0174cae6ac.js" crossorigin="anonymous"></script>
+    
+    <!--* My stile CSS-->
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body>
+
+    <div id="sidebar">
+        <div class="toggle-btn">
+          <!-- <span>&#9776</span> -->
+          
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+          <li>
+            <!-- <img src="/img/favicon.png" alt="Classroom" class="logo"> -->
+            <div class="todalas-class" id="clases2-nav">
+              <p><i class="fas fa-home"></i>Todas Las Clases</p>
+            </div>
+
+          </li>
+          <div class="classes"> 
+              <li>Clases</li>
+            </div>
+            <div id="clases-nav">
+              <!-- <li>POO</li> -->
+              <!-- <li>ECUACIONES DIFERENCIALES</li> -->
+            </div>
+        </ul>
+      </div>
+
+      <div class="home-content">
+
+          <nav class="navbar navbar-light nav-class">
+            <div class="container-fluid">
+              <a class="navbar-brand logo-classroom" href="#">
+                <img src="/img/googlelogo_clr_74x24px.svg" alt="" class="d-inline-block align-text-top">
+                <span>Classrroom</span>
+              </a>
+              
+              <!-- <div class="iconos-nav"> -->
+                <!-- * Icono 1 -->
+
+                <div class="ico-plus">
+                  <div class="btn-group">
+                    <button class="btn btn-light mr-2" id="dLabel" type="button" dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-plus"></i>
+                    </button>
+
+                    <ul class="dropdown-menu">
+                      <!-- <div class="dropdown-menu dropClass2" aria-labelledby="dLabel"> -->
+                        <a class="dropdown-item" href="#">Unirse a Clase</a>
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addClassModal" >Crear Clase</a>
+                    <!-- </div> -->
+                      <!-- <h1>plus</h1> -->
+                    </ul>
+                  </div>
+                </div>
+                
+                <!-- * Icono 2 -->
+    
+                <div class="ico-th "><i class="fas fa-th"></i></div>
+                <!-- * Icono 3 -->
+                <div class="ico-users" onclick="generarInstructores()">
+                  <div class="btn-group" id="img-perfil">
+                    <button type="button" class="btn btn-default" dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-users btn-sm"></i>
+                      <!-- <img class="circular--square btn-sm card-img2" src="/img/profile-pics/goku.jpg" /> -->
+                    </button>
+                      <ul class="dropdown-menu ventana-instructor">
+                        
+                        <div class="card mb-3">
+
+                            <div class="row no-gutters" id="add-instructor">
+                                <!-- <div class="col-md-4">
+                                  <img class="circular--square card-img" src="/img/profile-pics/goku.jpg" />
+                                </div>
+                                 <div class="col-md-8">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Goku</h5>
+                                      <h6 class="card-subtitle mb-2 text-muted">goku@gmail.com</h6>   
+                                  </div>
+                                </div> -->
+                          </div>
+
+                          <hr>
+                          <div class="text-center">
+                              <i class="fas fa-user-plus"></i>
+                              <a href="#" class="card-link btn-light" onclick="addInstructor()" data-bs-toggle="modal" data-bs-target="#newInstructorModal"">Agregar Instructor</a>
+                          </div>
+                          <div class="foTargetaPerfil pt-3 text-center">
+                              <a>Politica de privacidad</a> *
+                              <a>Temas Services</a>
+                          </div>
+                      </div>
+                      </ul>
+                    </div>
+                  </div>
+                  
+
+                <!-- </div> -->
+            </div>
+          </nav>
+
+
+
+          <!-- TODO Generar views -->
+          <div class="container">
+              <div class="row" id="todalas-clases">
+
+               <div class="col-12 img-inicio">
+                <img class="img-inicio" src="/img/ventanas/data_image_svg+xml;… (2).svg" alt="">
+               </div>
+                
+                
+              </div>
+          </div>
+  
+      </div>
+
+
+  
+            <!-- * Modal add instructor -->
+      <div class="modal fade" id="newInstructorModal" tabindex="-1" aria-labelledby="newInstructorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content card-stilo">
+            <div class="modal-body">
+              <div class="container">
+                <div class="row" id="newCategoriaPedido">
+                 
+                  <div class="col-12">
+                    <input id="nombre-inst" type="text" class="form-control mt-2" placeholder="Nombre">
+                    <input id="correo-inst" type="text" class="form-control mt-2" placeholder="Correo">
+                    <select id="list-inst" class="form-control mt-2">
+                      <!-- <option value="1">Icon1</option> -->
+                      <!-- <option value="2">Icon2</option> -->
+                    </select>
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+              <button type="button" data-bs-dismiss="modal" class="btn btn-procesar" onclick="newInstructor()">Add Instructor</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- * Ventana Modal add Clases -->
+      <div class="modal fade" id="addClassModal" tabindex="-1" aria-labelledby="addClassModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content card-stilo">
+            <div class="modal-body">
+              <div class="container">
+                <div class="row" id="newCategoriaPedido">
+                 
+                  <div class="col-12">
+                    <input id="nombreClase" type="text" class="form-control mt-2" placeholder="Nombre Clase">
+                    <input id="codigo" type="text" class="form-control mt-2" placeholder="Codigo">
+                    <input id="seccion" type="text" class="form-control mt-2" placeholder="Seccion">
+                    <input id="aula" type="text" class="form-control mt-2" placeholder="Aula">
+                    <!-- <select id="list-inst" class="form-control mt-2"> -->
+                      <!-- <option value="1">Icon1</option> -->
+                      <!-- <option value="2">Icon2</option> -->
+                    <!-- </select> -->
+                  </div>
+      
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+              <button type="button" data-bs-dismiss="modal" class="btn btn-procesar" onclick="addClass()">Add Class</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!--TODO Footer -->
+    <!-- <div class="text-dark footer">
+        <p>Classroom</p>
+        <span>@Derechos reservados</span>
+        <span>2021</span>
+    </div> -->
+
+
+
+
+    <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
+    <!-- <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/controlador.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
