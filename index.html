@@ -47,92 +47,99 @@
 
       <div class="home-content">
 
-          <nav class="navbar navbar-light nav-class">
-            <div class="container-fluid">
-              <a class="navbar-brand logo-classroom" href="#">
-                <img src="/img/googlelogo_clr_74x24px.svg" alt="" class="d-inline-block align-text-top">
-                <span>Classrroom</span>
-              </a>
-              
-              <!-- <div class="iconos-nav"> -->
-                <!-- * Icono 1 -->
-
-                <div class="ico-plus">
-                  <div class="btn-group">
-                    <button class="btn btn-light mr-2" id="dLabel" type="button" dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-plus"></i>
-                    </button>
-
-                    <ul class="dropdown-menu">
-                      <!-- <div class="dropdown-menu dropClass2" aria-labelledby="dLabel"> -->
-                        <a class="dropdown-item" href="#">Unirse a Clase</a>
-                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addClassModal" >Crear Clase</a>
-                    <!-- </div> -->
-                      <!-- <h1>plus</h1> -->
-                    </ul>
-                  </div>
-                </div>
-                
-                <!-- * Icono 2 -->
-    
-                <div class="ico-th "><i class="fas fa-th"></i></div>
-                <!-- * Icono 3 -->
-                <div class="ico-users" onclick="generarInstructores()">
-                  <div class="btn-group" id="img-perfil">
-                    <button type="button" class="btn btn-default" dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fas fa-users btn-sm"></i>
-                      <!-- <img class="circular--square btn-sm card-img2" src="/img/profile-pics/goku.jpg" /> -->
-                    </button>
-                      <ul class="dropdown-menu ventana-instructor">
-                        
-                        <div class="card mb-3">
-
-                            <div class="row no-gutters" id="add-instructor">
-                                <!-- <div class="col-md-4">
-                                  <img class="circular--square card-img" src="/img/profile-pics/goku.jpg" />
-                                </div>
-                                 <div class="col-md-8">
-                                  <div class="card-body">
-                                      <h5 class="card-title">Goku</h5>
-                                      <h6 class="card-subtitle mb-2 text-muted">goku@gmail.com</h6>   
-                                  </div>
-                                </div> -->
-                          </div>
-
-                          <hr>
-                          <div class="text-center">
-                              <i class="fas fa-user-plus"></i>
-                              <a href="#" class="card-link btn-light" onclick="addInstructor()" data-bs-toggle="modal" data-bs-target="#newInstructorModal"">Agregar Instructor</a>
-                          </div>
-                          <div class="foTargetaPerfil pt-3 text-center">
-                              <a>Politica de privacidad</a> *
-                              <a>Temas Services</a>
-                          </div>
-                      </div>
-                      </ul>
-                    </div>
-                  </div>
-                  
-
-                <!-- </div> -->
-            </div>
-          </nav>
-
+          
 
 
           <!-- TODO Generar views -->
           <div class="container">
               <div class="row" id="todalas-clases">
 
-               <div class="col-12 img-inicio">
-                <img class="img-inicio" src="/img/ventanas/data_image_svg+xml;… (2).svg" alt="">
-               </div>
+                <!-- *Navbar -->
+                <nav class="navbar navbar-light nav-class">
+                  <div class="container-fluid">
+                    <a class="navbar-brand logo-classroom" href="#">
+                      <img src="/img/googlelogo_clr_74x24px.svg" alt="" class="d-inline-block align-text-top">
+                      <span>Classrroom</span>
+                    </a>
+                    
+                    <!-- <div class="iconos-nav"> -->
+                      <!-- * Icono 1 -->
+      
+                      <div class="ico-plus">
+                        <div class="btn-group">
+                          <button class="btn btn-light mr-2" id="dLabel" type="button" dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fas fa-plus"></i>
+                          </button>
+      
+                          <ul class="dropdown-menu">
+                            <!-- <div class="dropdown-menu dropClass2" aria-labelledby="dLabel"> -->
+                              <a class="dropdown-item" href="#">Unirse a Clase</a>
+                              <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addClassModal" >Crear Clase</a>
+                          <!-- </div> -->
+                            <!-- <h1>plus</h1> -->
+                          </ul>
+                        </div>
+                      </div>
+                      
+                      <!-- * Icono 2 -->
+          
+                      <div class="ico-th "><i class="fas fa-th"></i></div>
+                      <!-- * Icono 3 -->
+                      <div class="ico-users" onclick="generarInstructores()">
+                        <div class="btn-group" id="img-perfil">
+                          <button type="button" class="btn btn-default" dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-users btn-sm"></i>
+                            <!-- <img class="circular--square btn-sm card-img2" src="/img/profile-pics/goku.jpg" /> -->
+                          </button>
+                            <ul class="dropdown-menu ventana-instructor">
+                              
+                              <div class="card mb-3">
+      
+                                  <div class="row no-gutters" id="add-instructor">
+                                      <!-- <div class="col-md-4">
+                                        <img class="circular--square card-img" src="/img/profile-pics/goku.jpg" />
+                                      </div>
+                                       <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Goku</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">goku@gmail.com</h6>   
+                                        </div>
+                                      </div> -->
+                                </div>
+      
+                                <hr>
+                                <div class="text-center">
+                                    <i class="fas fa-user-plus"></i>
+                                    <a href="#" class="card-link btn-light" onclick="addInstructor()" data-bs-toggle="modal" data-bs-target="#newInstructorModal"">Agregar Instructor</a>
+                                </div>
+                                <div class="foTargetaPerfil pt-3 text-center">
+                                    <a>Politica de privacidad</a> *
+                                    <a>Temas Services</a>
+                                </div>
+                            </div>
+                            </ul>
+                          </div>
+                        </div>
+      
+                  </div>
+                </nav>
                 
                 
+                <!-- *msj Inicial -->
+
+                <div class="container-fluit pt-5">
+                  <div class="row">
+                    <div class="col-12">
+                      <h1 class="text-center">Welcome in Classroom</h1>
+                      <h3 class="text-center">Select your Instructor</h3>
+                    </div>
+                    <img class="img-init" src="/img/ventanas/data_image_svg+xml;….svg" alt="">
+                  </div>
+                  
+                </div>
+
               </div>
           </div>
-  
-      </div>
 
 
   
@@ -194,6 +201,34 @@
           </div>
         </div>
       </div>
+
+        <!-- * Ventana Modal invitar estudiante -->
+        <div class="modal fade" id="addEstudentModal" tabindex="-1" aria-labelledby="addEstudentModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content card-stilo">
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row" id="new-student">
+                   
+                    <div class="col-12">
+                      <input id="nombre-stu" type="text" class="form-control mt-2" placeholder="Nombre Estudiante">
+                      <input id="correo-stu" type="text" class="form-control mt-2" placeholder="Correo">
+                      <select id="list-stu" class="form-control mt-2">
+                        <!-- <option value="1">Icon1</option> -->
+                        <!-- <option value="2">Icon2</option> -->
+                      </select>
+                    </div>
+        
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                <button type="button" data-bs-dismiss="modal" class="btn btn-procesar" onclick="addEstudentModal()">Add Estudents</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
     <!--TODO Footer -->

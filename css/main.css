@@ -88,7 +88,7 @@
 }
 
 #sidebar.active .logo-classroom{
-  margin-left: 6%;
+  margin-left: 60;
   transition: all 0.4s ease;
 }
 
@@ -248,7 +248,8 @@
 }
 
 .link0{
-  margin-left: -20%; 
+  margin-left: -32%;
+    margin-top: -0.5%;
 }
 .link1{
   margin-left: -25%;
@@ -261,7 +262,7 @@
 }
 
 #todalas-clases .logo-classroom{
-  opacity: 0;
+  opacity: 1;
 }
 
 
@@ -342,10 +343,7 @@
   margin-top: 1%;
 }
 
-.img-inicio{
-  padding: 10%;
-  padding-left: 20%;
-}
+
 
 .btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
   border-top-right-radius: 3;
@@ -358,8 +356,73 @@
   width: 60%;
 }
 
+/** Ventana Asignacion */
+
+.btn-asig{
+  border-radius: 1.5rem ;
+  width: 26%;
+}
+.ico-asig{
+  width: 15%;
+}
+.card-asig{
+  border: 0;
+}
+
+.btn-asig1{
+  border-radius: 1.5rem;
+}
+
+.text-asig{
+  text-align: end;
+  margin-bottom: 0px;
+  margin-top: -6%;
+}
+
+.title-asig{
+color: #0A5DD5;
+margin-bottom: -5%;
+}
+
+.text2-asig{
+color: #0A5DD5;
+margin-left: 95%;
+transform: translateY(20px);
+}
+
+.card2{
+  border: 0;
+  padding-bottom: 2%;
+}
+
+.btn-invitar {
+  margin-left: 35%;
+  width: 10%;
+  margin-top: -1%;
+}
+
+.img-inicio {
+  padding: 0%;
+  padding-left: 15%;
+}
+
+.text-invitar {
+  margin-left: 29%;
+  margin-top: -4%;
+  font-size: larger;
+}
+
+.hr-asig{
+  color: #0A5DD5;
+}
 
 
+.img-init {
+  width: 30%;
+  margin-left: 30%;
+  margin-top: 10%;
+  position: fixed;
+}
 
 /* 
 .ventana-instructor{
@@ -386,6 +449,24 @@
     width: 50.7%;
     border: .1px solid #ddd;
   } */
+
+      .btn-invitar {
+        margin-left: 30%;
+        width: 30%;
+        margin-top: -5%;
+    }
+
+    .img-inicio {
+        padding: 0%;
+        padding-left: 10%;
+        width: 90%;
+    }
+
+    .text-invitar {
+        margin-left: 0%;
+        margin-top: -10%;
+        font-size: larger;
+    }
 
   .iconos-nav{
    color: #797c7c;
@@ -473,6 +554,155 @@
     font-size: small;
     /* font-weight: bold; */
   }
+
+  /** Ventana Asignacion */
+  .btn-asig{
+    border-radius: 1.5rem ;
+    width: 30%;
+    font-size: 36%;
+  }
+  .ico-asig{
+    width: 15%;
+  }
+
+  .link0 {
+    opacity: 0;
+  }
+  .link1 {
+    margin-left: -50%;
+    font-size: small;
+    padding-top: 5%;
+  }
+  .link2 {
+    margin-left: -32%;
+    font-size: small;
+    padding-top: 5%;
+  }
+  .link3 {
+    margin-left: -5%;
+    font-size: small;
+    padding-top: 5%;
+  }
+
+  /** detalles */
+
+
+card-detalle1 {
+  width: 80%;
+  margin: auto;
+  padding-left: inherit;
+  padding-right: inherit;
+  border-radius: 1.2rem;
+  margin-top: 3%;
+  font-size: small;
+}
+
+.nombre-detalle {
+  position: absolute;
+  transform: translateY(-90px);
+  color: rgb(255, 255, 255);
+  font-size: small;
+  font-weight: bold;
+  margin-top: 10%;
+}
+
+.seccion-detalle {
+  position: absolute;
+  transform: translateY(-70px);
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  /* font-weight: bold; */
+  margin-top: 7%;
+}
+
+.codigo-detalle {
+  position: absolute;
+  transform: translateY(-40px);
+  color: rgb(255, 255, 255);
+  font-size: small;
+  /* font-weight: bold; */
+  margin-top: 2%;
+}
+
+
+
+.card-detalle2 {
+  border-radius: 0.5rem;
+  margin-left: 5px;
+  width: 430%;
+  padding-top: 0px;
+  margin-top: -20%;
+  text-align: center;
+}
+
+.card-detalle3 {
+  border-radius: 0.5rem;
+  right: 70px;
+  width: 150%;
+  margin-bottom: 11.5%;
+  font-size: small;
+  margin-top: 86%;
+  padding-top: 10%;
+}
+
+.fa-retweet {
+  margin-left: 90%;
+  transform: translateY(-14px);
+}
+
+
+.card-detalle4 {
+  border-radius: 0.5rem;
+  right: 70px;
+  width: 150%;
+  font-size: small;
+  margin-top: -5%;
+}
+
+.fa-ellipsis-v {
+  margin-left: 70%;
+  position: absolute;
+  margin-top: 11%;
+}
+
+.title-det4 {
+  margin-top: 11%;
+  margin-left: -56%;
+  font-size: medium;
+}
+
+.text-det4 {
+  margin-top: -1%;
+  margin-left: 2%;
+}
+
+.text2-det4 {
+  margin-top: -1%;
+  margin-left: -6%;
+}
+
+.input-det4 {
+  margin-left: -20px;
+  border-radius: 1.5rem;
+  width: 120%;
+  padding: -0.5px;
+  border: 1px solid #bfb9b9;
+  padding-top: 1%;
+  margin-top: 13%;
+}
+
+.fa-paper-plane {
+  margin-left: 63%;
+  position: absolute;
+  margin-top: 13%;
+}
+
+.img-init {
+  width: 30%;
+  margin-left: 30%;
+  margin-top: 40%;
+  position: absolute;
+}
   
 }
 
