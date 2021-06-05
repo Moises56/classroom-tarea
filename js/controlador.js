@@ -242,6 +242,8 @@ clases: [
 localStorage = window.localStorage
 var indiceSelect = null
 
+var clasSelect = null
+
 if (localStorage.getItem('classroom')==null) {
   localStorage.setItem("classroom", JSON.stringify(classroom));
 } else {
@@ -374,7 +376,9 @@ function addInstructor(){
 manager = ['androide_16.jpg','androide_18.jpg','androide_19.jpg','baby.jpg','bulma.jpg','kibito.jpg','picoro.jpg',
           'roshi.jpg','kami.jpg','dende.jpg','mr_satan.jpg','cell.jpg','freezer','goku.jpg','vegeta.jpg'] 
 
-for (let i = 0; i <manager.length; i++) {
+
+
+          for (let i = 0; i <manager.length; i++) {
   // console.log(manager[i]);
    document.getElementById('list-inst').innerHTML += 
    `<option value="${manager[i]}">${manager[i]}</option>`
@@ -498,10 +502,11 @@ function  generarClases(i) {
 
 
 function detalleClases(d){
+   clasSelect =  d 
   // console.log('instructor', indiceSelect);
   i =indiceSelect
   // console.log(classroom.instructor);
-  estude = '';
+    estude = '';
   
    z=i;
   //  console.log(app.clases[d]);
@@ -516,7 +521,8 @@ function detalleClases(d){
     img = classroom[z].instructor.imagen
     //  console.log(classroom[z].instructor.nombre);
 
-    estudents = classroom[z].clases[d].participantes
+    var estudents = classroom[z].clases[d].participantes
+    // console.log(estudents);
     for (const e in estudents) {
       // console.log(estudents[e].nombre);
       estudiante = estudents[e].nombre
@@ -527,6 +533,7 @@ function detalleClases(d){
       // console.log(estudents);
       asignaciones = classroom[z].clases[d].asignaciones
       anuncios = classroom[z].clases[d].anuncios
+      asig ="";
       for (let a = 0; a < asignaciones.length; a++) {
         titulo = asignaciones[a].titulo
         fecha = asignaciones[a].fecha
@@ -534,11 +541,35 @@ function detalleClases(d){
         
         // console.log(asignaciones[a].titulo);
 
+        taregetaAnun ='';
+        
         for (let n = 0; n < anuncios.length; n++) {
           msj = anuncios[n].mensaje
-          hora = anuncios[n].hora
+          fechaAnu = anuncios[n].fecha
           // console.log(anuncios[n].mensaje);   
           // document.getElementById('todalas-clases').innerHTML = 
+
+          //*Genera targetas de comentarios
+          taregetaAnun +=
+          `  <div class="card card-detalle4" id="targeta-anuncio">
+                <img class="img-detalle" src="/img/profile-pics/${img}" />
+                
+                <div class="card-body text-detalle">
+                    <i class="fas fa-ellipsis-v"></i>
+                    <h5 class="card-title title-det4">${instructor}</h5>
+                    <p class="card-text text-det4"> ${fechaAnu}</p>
+                    <p class="card-text text2-det4"> ${msj}</p>
+                </div>
+            
+                <div class="card card2-detalle4">
+                    <img class="img-detalle" src="/img/profile-pics/${img}" />
+                    <div class="card-body text-detalle">
+                        <i class="far fa-paper-plane" onclick="sendComment()"></i>
+                        <input id="comment" type="text" class="form-control input-det4" placeholder="Add Class Comment">
+                    </div>
+                </div>
+            </div>
+          ` 
 
           //*Genera todo el detalle de la clase seleccionada
           document.getElementById('todalas-clases').innerHTML =
@@ -598,31 +629,27 @@ function detalleClases(d){
               </div>
             </div>
             
-            <div class="card card-detalle4">
-              <img class="img-detalle" src="/img/profile-pics/${img}" />
-              <div class="card-body text-detalle">
-                <i class="fas fa-ellipsis-v"></i>
-                <h5 class="card-title title-det4">${instructor}</h5>
-                <p class="card-text text-det4"> ${fecha}</p>
-                <p class="card-text text2-det4"> ${msj}</p>
-              </div>
-              <div class="card card2-detalle4">
-                <img class="img-detalle" src="/img/profile-pics/${img}" />
-                <div class="card-body text-detalle">
-                  <i class="far fa-paper-plane"></i>
-                  <input type="text" class="form-control input-det4" placeholder="Add Class Comment">
-                  <!-- <i class="fas fa-retweet"></i> -->
-                </div>
-              </div>
-            </div>
+            ${taregetaAnun}
+           
         
           </div>
         </div>
 
           `
         }
+
+         //*Generar Asignaciones
+          asig +=
+          `<div class="card-body">
+            <button class="btn btn-primary btn-asig1"><i class="fas fa-clipboard-list"></i></i></button>
+            ${titulo}
+            <p class="text-asig" >${fecha}</p>
+          </div>
+          `
         
       }
+
+     
       
         //* Generar particpantes
       estude +=
@@ -635,9 +662,40 @@ function detalleClases(d){
           </div>
           `
       }
+     
   }
 }
    
+function sendComment(){
+  c = clasSelect //*indice de la clase
+  i = indiceSelect; //*indice del instructor
+  
+  Comment = document.getElementById('comment').value
+  console.log(Comment);
+  
+  z=i
+  if(z == i){
+
+     msj = classroom[i].clases[c].anuncios
+    
+
+  f = new Date()
+
+  anuncio ={
+          mensaje: Comment,
+          fecha: f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() ,
+        }
+
+        console.log(anuncio);
+        msj.push(anuncio)
+        // ventanaParticipantes()
+        localStorage.setItem("classroom", JSON.stringify(classroom));
+        detalleClases(i)
+        // alert('Asignation add Successfull')
+  
+  
+    }
+}
   
 
 //*Ventana mostrar Asignaciones
@@ -668,12 +726,10 @@ function ventanaAsignaciones(){
       <div class="col-xl-8 m-auto pt-3">
         <div class="card card-asig">
           <div class="card-body">
-            <button class="btn btn-primary btn-asig"><i class="fas fa-plus ico-asig"></i>Nueva Asignacion</button>
+            <button class="btn btn-primary btn-asig" data-bs-toggle="modal" data-bs-target="#newAsignacionModal"><i class="fas fa-plus ico-asig"></i>Nueva Asignacion</button>
           </div>
-          <div class="card-body">
-            <button class="btn btn-primary btn-asig1"><i class="fas fa-clipboard-list"></i></i></button>
-            ${titulo}
-            <p class="text-asig" >${fecha}</p>
+          <div class="card-body" id="asig">
+            ${asig}
           </div><hr>
           
       </div>
@@ -687,6 +743,46 @@ function ventanaAsignaciones(){
       
   `
 }
+
+//* Guardar nueva Asignacion
+function newAsignacionModal(){
+  console.log('new Asignacion');
+
+
+  c = clasSelect //*indice de la clase
+  i = indiceSelect; //*indice del instructor
+
+  titulo =  document.getElementById('nombre-asig').value;
+  descripcion =  document.getElementById('descripcion-asig').value;
+  fecha =  document.getElementById('fecha-asig').value;
+
+  z=i
+  if(z == i){
+
+     asignacion = classroom[i].clases[c].asignaciones
+    
+    asign = {
+              titulo: titulo,
+              descripcion: descripcion,
+              fecha: fecha
+            }
+      // console.log(asignacion);  
+       console.log(asign);  
+      asignacion.push(asign)
+      // ventanaParticipantes()
+      localStorage.setItem("classroom", JSON.stringify(classroom));
+      alert('Asignation add Successfull')
+
+
+  //nombre-asig
+//  descripcion-asig
+//  fecha-asig
+  }
+}
+
+
+
+
 
 
 //*Ventana mostrar Particioantes
@@ -806,18 +902,21 @@ function addClass(){
     }
 }
 
-//*Ventana Inictar Estudiante
+
+
+
+
+//*Ventana Inivitar Estudiante
 
 for (let i = 0; i <manager.length; i++) {
   // console.log(manager[i]);
    document.getElementById('list-stu').innerHTML += 
    `<option value="${manager[i]}">${manager[i]}</option>`
 }
-
-
+//* Guardar un nuevo participante
 function addEstudentModal(){
-  i= indiceSelect;
-  // console.log('invitar Estudentens', i);
+  c = clasSelect //*indice de la clase
+  i = indiceSelect; //*indice del instructor
 
   nombreStu =  document.getElementById('nombre-stu').value;
   correoStu =  document.getElementById('correo-stu').value;
@@ -826,29 +925,21 @@ function addEstudentModal(){
   z=i
   if(z == i){
 
-
-  // clase = classroom.clases
-  // for (const c in classroom) {
-     parti = classroom[i].clases
-     studen ='';
-     for (let e = 0; e < parti.length; e++) {
-      //  console.log(parti[i].participantes[e]);
-       
-      studen = parti[i].participantes
-       console.log(studen);
-      // }
+     participante = classroom[i].clases[c].participantes
+    
     student = {
                   nombre: nombreStu,
                   correo: correoStu,
                   imagen: listStu
                 }
               
-    //  studen.push(student)
-    //  localStorage.setItem("classroom", JSON.stringify(classroom));
-    //  alert('Estudents add Successfull')
+     participante.push(student)
+     ventanaParticipantes()
+     localStorage.setItem("classroom", JSON.stringify(classroom));
+     alert('Estudents add Successfull')
     // console.log(student);
   
-  }
+  // }
   }
 }
 

@@ -110,7 +110,7 @@
                                 <hr>
                                 <div class="text-center">
                                     <i class="fas fa-user-plus"></i>
-                                    <a href="#" class="card-link btn-light" onclick="addInstructor()" data-bs-toggle="modal" data-bs-target="#newInstructorModal"">Agregar Instructor</a>
+                                    <a href="#" class="card-link btn-light" onclick="addInstructor()" data-bs-toggle="modal" data-bs-target="#newInstructorModal">Agregar Instructor</a>
                                 </div>
                                 <div class="foTargetaPerfil pt-3 text-center">
                                     <a>Politica de privacidad</a> *
@@ -231,6 +231,33 @@
         </div>
 
 
+         <!-- * Ventana Modal Nueva Asignacion-->
+         <div class="modal fade" id="newAsignacionModal" tabindex="-1" aria-labelledby="newAsignacionModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content card-stilo">
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row" id="new-student">
+                   
+                    <div class="col-12">
+                      <input id="nombre-asig" type="text" class="form-control mt-2" placeholder="Nombre Asignacion">
+                      <input id="descripcion-asig" type="text" class="form-control mt-2" placeholder="Descripcion">
+                      <input type="date" id="fecha-asig" class="form-control mt-2" placeholder="Fecha Limite">
+                    </div>
+        
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                <button type="button" data-bs-dismiss="modal" class="btn btn-procesar" onclick="newAsignacionModal()">New Asignation</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- * data-bs-toggle="modal" data-bs-target="#newAsignacionModal" -->
     <!--TODO Footer -->
     <!-- <div class="text-dark footer">
         <p>Classroom</p>
