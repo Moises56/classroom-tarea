@@ -412,9 +412,13 @@ transform: translateY(20px);
   margin-top: -1%;
 }
 
+
 .img-inicio {
-  padding: 0%;
-  padding-left: 15%;
+    padding: 0%;
+    padding-left: 0%;
+    margin-left: 5%;
+    margin-top: 0%;
+    width: 80%;
 }
 
 .text-invitar {
@@ -433,6 +437,45 @@ transform: translateY(20px);
   margin-left: 30%;
   margin-top: 10%;
   position: fixed;
+}
+
+.title-inst{
+  margin-left: 1%;
+}
+.correo-inst{
+  margin-left: 1%;
+
+}
+
+.img-inst{
+  cursor: pointer;
+  width: 95%;
+}
+
+.img-inst:hover{
+  border: 1px solid #b52222;
+  transition: 0.5s ease;
+}
+
+.card-img-top{
+  cursor: pointer;
+}
+.card-img-top:hover{
+  border: 1px solid #b52222;
+}
+
+.btn-asig1:hover{
+  border: 1px solid red;
+  background-color: darkgreen;
+}
+.btn-asig:hover{
+  border: 1px solid red;
+  background-color: darkgreen;
+}
+
+.dropdown-menushow {
+  /* display: block; */
+  margin-left: 250%;
 }
 
 /* 
@@ -460,6 +503,13 @@ transform: translateY(20px);
     width: 50.7%;
     border: .1px solid #ddd;
   } */
+      /* .title-inst{
+        margin-left: 30%;
+      }
+      .correo-inst{
+        margin-left: 30%;
+      
+      } */
 
       .btn-invitar {
         margin-left: 30%;
@@ -471,6 +521,7 @@ transform: translateY(20px);
         padding: 0%;
         padding-left: 10%;
         width: 90%;
+        margin-left: -5%;
     }
 
     .text-invitar {
@@ -485,12 +536,14 @@ transform: translateY(20px);
     width: 50%;
   }
   .logo-classroom{
-   opacity: 0;
+   /* opacity: 0; */
+   margin-left: -15%;
+   font-size: 60%;
   }
   .ico-plus{
     font-size: larger;
     position: absolute;
-    margin-left: 50%;
+    margin-left: 35%;
   }
   .ico-th{
     font-size: larger;
@@ -725,6 +778,18 @@ card-detalle1 {
     border: .1px solid #ddd;
   } */
 
+  .btn-asig {
+    /* border-radius: 1.5rem; */
+    width: 37%;
+  }
+  .title-inst{
+    margin-left: 30%;
+  }
+  .correo-inst{
+    margin-left: 30%;
+  
+  }
+
   .iconos-nav{
    color: #797c7c;
     position: absolute;
@@ -806,6 +871,17 @@ card-detalle1 {
     width: 50.7%;
     border: .1px solid #ddd;
   } */
+
+  .btn-asig {
+    width: 27%;
+  }
+  .title-inst{
+    margin-left: 30%;
+  }
+  .correo-inst{
+    margin-left: 30%;
+  
+  }
 
   .iconos-nav{
    color: #797c7c;

@@ -63,7 +63,7 @@ var classroom =
         codigo: "POO33XZ",
         seccion: "1400",
         imgFondo: "detalle2.png",
-        imgFondoDetalle: "detalle1.png",
+        imgFondoDetalle: "detalle2.png",
         aula: "B-12",
         descripcion: "Clase donde se enseña a programar bien",
         participantes: [
@@ -173,7 +173,7 @@ clases: [
       codigo: "POO33XZ",
       seccion: "1400",
       imgFondo: "detalle2.png",
-      imgFondoDetalle: "detalle1.png",
+      imgFondoDetalle: "detalle2.png",
       aula: "B-12",
       descripcion: "Clase donde se enseña a programar bien",
       participantes: [
@@ -268,7 +268,7 @@ var navbar = `<nav class="navbar navbar-light nav-class">
                 <i class="fas fa-plus"></i>
                 </button>
 
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu dropdown-menushow">
                   <!-- <div class="dropdown-menu dropClass2" aria-labelledby="dLabel"> -->
                     <a class="dropdown-item" href="#">Unirse a Clase</a>
                     <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addClassModal" >Crear Clase</a>
@@ -351,12 +351,12 @@ function generarInstructores(){
 
          document.getElementById('add-instructor').innerHTML +=
          `<div class="col-md-4">
-           <img onclick=" generarClases(${i})" class="circular--square card-img" src="/img/profile-pics/${img}" />
+           <img onclick=" generarClases(${i})" class="circular--square card-img img-inst" src="/img/profile-pics/${img}" />
           </div>
           <div class="col-md-8">
             <div class="card-body">
-               <h5 class="card-title">${nome}</h5>
-               <h6 class="card-subtitle mb-2 text-muted">${correo}</h6>   
+               <h5 class="card-title title-inst">${nome}</h5>
+               <h6 class="card-subtitle mb-2 text-muted correo-inst">${correo}</h6>   
             </div>
           </div>
          `
@@ -386,6 +386,7 @@ manager = ['androide_16.jpg','androide_18.jpg','androide_19.jpg','baby.jpg','bul
 
 //*Nuevo Instructor
 function newInstructor(){
+  i =indiceSelect
   nombre = document.getElementById('nombre-inst').value;
   correo = document.getElementById('correo-inst').value;
   list = document.getElementById('list-inst').value;
@@ -402,8 +403,8 @@ function newInstructor(){
               nombreClase: "Redes 1",
               codigo: "RED11XZ",
               seccion: "1400",
-              imgFondo: "detalle3.png",
-              imgFondoDetalle: "detalle1.png",
+              imgFondo: "detalle2.png",
+              imgFondoDetalle: "detalle2.png",
               aula: "B-14",
               descripcion: "Clase donde se enseña Redes",
               participantes: [
@@ -434,6 +435,8 @@ function newInstructor(){
         }
      classroom.push(instr)
      localStorage.setItem("classroom", JSON.stringify(classroom));
+    //  generarClases()
+     
      alert('Instructor add successfull')
 
 }
@@ -666,6 +669,7 @@ function detalleClases(d){
   }
 }
    
+//*Guaradar un mensaje
 function sendComment(){
   c = clasSelect //*indice de la clase
   i = indiceSelect; //*indice del instructor
@@ -735,7 +739,7 @@ function ventanaAsignaciones(){
       </div>
 
         <div class="col-12 img-inicio">
-          <img class="img-inicio" src="/img/ventanas/data_image_svg+xml;… (2).svg" alt="">
+          <img class="img-inicio" src="/img/ventanas/data_image_png;base… (1).png" alt="">
         </div>
       </div>
 
@@ -769,14 +773,9 @@ function newAsignacionModal(){
       // console.log(asignacion);  
        console.log(asign);  
       asignacion.push(asign)
-      // ventanaParticipantes()
       localStorage.setItem("classroom", JSON.stringify(classroom));
       alert('Asignation add Successfull')
 
-
-  //nombre-asig
-//  descripcion-asig
-//  fecha-asig
   }
 }
 
@@ -866,8 +865,8 @@ function addClass(){
             nombreClase: nombreClase,
             codigo: codigo,
             seccion: seccion,
-            imgFondo: 'detalle1.png',
-            imgFondoDetalle: 'detalle2.png',
+            imgFondo: 'detalle3.png',
+            imgFondoDetalle: 'detalle3.png',
             aula: aula,
             descripcion: 'lorem ipsu',
             participantes: [
@@ -897,6 +896,8 @@ function addClass(){
     
       clase.push(clas)
       localStorage.setItem("classroom", JSON.stringify(classroom));
+      generarClases(i)
+
       alert('Class add successfull')
       console.log(clas);
     }
@@ -934,7 +935,6 @@ function addEstudentModal(){
                 }
               
      participante.push(student)
-     ventanaParticipantes()
      localStorage.setItem("classroom", JSON.stringify(classroom));
      alert('Estudents add Successfull')
     // console.log(student);
