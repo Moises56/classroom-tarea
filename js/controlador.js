@@ -244,11 +244,26 @@ var indiceSelect = null
 
 var clasSelect = null
 
+
 if (localStorage.getItem('classroom')==null) {
   localStorage.setItem("classroom", JSON.stringify(classroom));
 } else {
   classroom = JSON.parse(localStorage.getItem('classroom'))
 }
+
+
+var i = 0; 
+
+  imP = classroom[i].instructor
+  btnPerfil = imP.imagen
+  imPer = ` <img class="circular--square btn-sm card-img2" src="/img/profile-pics/${btnPerfil}"/>`
+  // i++
+  // console.log(imPer);
+
+  // console.log(imPer);
+
+
+
 
 
 //* guardando el navbar en la variable navbar
@@ -285,7 +300,8 @@ var navbar = `<nav class="navbar navbar-light nav-class">
             <div class="ico-users" onclick="generarInstructores()">
               <div class="btn-group" id="img-perfil">
                 <button type="button" class="btn btn-default" dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fas fa-users btn-sm"></i>
+                  <!-- <i class="fas fa-users btn-sm"></i> -->
+                 ${imPer}
                   <!-- <img class="circular--square btn-sm card-img2" src="/img/profile-pics/goku.jpg" /> -->
                 </button>
                   <ul class="dropdown-menu ventana-instructor">
@@ -323,29 +339,22 @@ var navbar = `<nav class="navbar navbar-light nav-class">
         </div>
         </nav>`
 
+
+
 //* generar instructores
 
 function generarInstructores(){
   document.getElementById('add-instructor').innerHTML = '';
   document.getElementById("clases2-nav").innerHTML = ''; 
   // console.log('instructores',classroom);
+
   classroom.forEach(function(inst,i){
     // console.log(inst.instructor.nombre);
       nome = inst.instructor.nombre
       correo = inst.instructor.correo
-      img = inst.instructor.imagen
-      // for (const i in instruc) {
-        // console.log(instruc[i].nombre);
+      img= inst.instructor.imagen
+      // img2= inst.instructor.imagen
 
-        // document.getElementById("img-perfil").innerHTML = 
-        // `
-        // <img class="circular--square fa-users btn-sm card-img2" src="/img/profile-pics/${img}" />
-        // ` 
-
-        // document.getElementById("ventana-clases").innerHTML = `
-        // <a class="nav-link link1 active" aria-current="page" href="#" generarClases(${i})>Clase</a>
-        // ` 
-        
         document.getElementById("clases2-nav").innerHTML += 
         `<p onclick="generarClases(${i})"></i>Instructor ${nome}</p>`
 
@@ -360,8 +369,6 @@ function generarInstructores(){
             </div>
           </div>
          `
-      // }
-       
     });
 
 
@@ -378,7 +385,7 @@ manager = ['androide_16.jpg','androide_18.jpg','androide_19.jpg','baby.jpg','bul
 
 
 
-          for (let i = 0; i <manager.length; i++) {
+ for (let i = 0; i <manager.length; i++) {
   // console.log(manager[i]);
    document.getElementById('list-inst').innerHTML += 
    `<option value="${manager[i]}">${manager[i]}</option>`
@@ -446,14 +453,12 @@ function newInstructor(){
 function  generarClases(i) {
   //* captuarando el indice del instructor seleccionado
   indiceSelect = i
-  
-  //  console.log(indiceSelect);
+
   document.getElementById('todalas-clases').innerHTML = '';
   document.getElementById('clases-nav').innerHTML = '';
   // console.log(classroom[i].clases);
   clasInst = classroom[i].clases
   // console.log(clasInst);
-  
  
   //*Genera el Navbar guardado en la variable  navbar
   document.getElementById('todalas-clases').innerHTML = navbar
@@ -522,7 +527,9 @@ function detalleClases(d){
     imgFondoDetalle=classroom[z].clases[d].imgFondoDetalle
     instructor = classroom[z].instructor.nombre
     img = classroom[z].instructor.imagen
-    //  console.log(classroom[z].instructor.nombre);
+   
+    // btnPerfil = img  
+    // console.log(img);
 
     var estudents = classroom[z].clases[d].participantes
     // console.log(estudents);
@@ -738,8 +745,8 @@ function ventanaAsignaciones(){
           
       </div>
 
-        <div class="col-12 img-inicio">
-          <img class="img-inicio" src="/img/ventanas/data_image_png;base… (1).png" alt="">
+        <div class="col-12">
+          <img class="img-inicio1" src="/img/ventanas/data_image_png;base… (1).png" alt="">
         </div>
       </div>
 
@@ -784,7 +791,7 @@ function newAsignacionModal(){
 
 
 
-//*Ventana mostrar Particioantes
+//*Ventana mostrar Participantes
 function ventanaParticipantes(){
   // console.log("Hello Participantes");
 
@@ -834,7 +841,7 @@ function ventanaParticipantes(){
              </div>
           </div>
 
-        <div class="col-12 img-inicio">
+        <div class="col-12">
           <img class="img-inicio" src="/img/ventanas/data_image_svg+xml;… (2).svg" alt="">
         </div>
         <p class="text-invitar">Invita Estudiantes a tu clase</p>

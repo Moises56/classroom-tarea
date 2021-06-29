@@ -364,7 +364,7 @@
 
 .card-img2{
   border-radius: 1.5rem;
-  width: 60%;
+  width: 120%;
 }
 
 /** Ventana Asignacion */
@@ -413,17 +413,33 @@ transform: translateY(20px);
 }
 
 
-.img-inicio {
-    padding: 0%;
-    padding-left: 0%;
-    margin-left: 5%;
+/* .img-inicio1 {
+  padding: 0%;
+  padding-left: 0%;
+  margin-left: 20%;
+  margin-top: 0%;
+  width: 50%;
+} */
+
+.img-inicio1{
+  margin-left: 30%;
     margin-top: 0%;
-    width: 80%;
+    width: 30%;
+    background: #D7D7D7;
+    border-radius: 12rem;
 }
+
+.img-inicio {
+  margin-left: 33%;
+  width: 15%;
+  background: #D7D7D7;
+  border-radius: 6rem;
+}
+
 
 .text-invitar {
   margin-left: 29%;
-  margin-top: -4%;
+  margin-top: 0%;
   font-size: larger;
 }
 
@@ -433,7 +449,7 @@ transform: translateY(20px);
 
 
 .img-init {
-  width: 30%;
+  width: 20%;
   margin-left: 30%;
   margin-top: 10%;
   position: fixed;
@@ -517,16 +533,24 @@ transform: translateY(20px);
         margin-top: -5%;
     }
 
-    .img-inicio {
+    /* .img-inicio {
         padding: 0%;
         padding-left: 10%;
         width: 90%;
         margin-left: -5%;
-    }
+    } */
+
+    .img-inicio {
+      padding: 0%;
+      padding-left: 0%;
+      width: 60%;
+      margin-left: 10%;
+      border-radius: 7rem;
+  }
 
     .text-invitar {
         margin-left: 0%;
-        margin-top: -10%;
+        margin-top: 0%;
         font-size: larger;
     }
 
@@ -651,7 +675,8 @@ transform: translateY(20px);
   /** detalles */
 
 
-card-detalle1 {
+
+.card-detalle1 {
   width: 80%;
   margin: auto;
   padding-left: inherit;
@@ -767,6 +792,12 @@ card-detalle1 {
   margin-top: 40%;
   position: absolute;
 }
+
+.card-img2 {
+  border-radius: 1.5rem;
+  width: 200%;
+  margin-left: -70%;
+}
   
 }
 
@@ -840,6 +871,12 @@ card-detalle1 {
     left: -2%;
 }
 
+.card-img2 {
+  border-radius: 1.5rem;
+  width: 200%;
+  margin-left: -70%;
+}
+
 /* *DEtalle */
 .nombre-detalle{
   position: absolute;
@@ -893,6 +930,13 @@ card-detalle1 {
   .logo-classroom{
     opacity: 0;
   } 
+
+  .card-img2 {
+    border-radius: 1.5rem;
+    width: 230%;
+    margin-left: -70%;
+}
+
   /* .ico-folder {
     margin-left: 90%;
     padding-bottom: 0px;
